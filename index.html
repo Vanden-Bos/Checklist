@@ -1,25 +1,153 @@
 <html>
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.3/tailwind.min.css">
-</link>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.1/alpine.js" defer> </script>
 
+<h1 class="px-10 py-5"> BEFORE ENGINE START
+    <div x-data="{stuff: [false, false, false, false, false, false, false, false, false, false]}">
+        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. Preflight.......................Complete</div>
+        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Fuel Drain Tool.....................Stow</div>
+        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Passenger briefing..............Complete</div>
+        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Seats....................Adjust and Lock</div>
+        <div x-show="!stuff[4]"> <input x-model="stuff[4]" type="checkbox"> 5. Seat Belt & Harness...................On</div>
+        <div x-show="!stuff[5]"> <input x-model="stuff[5]" type="checkbox"> 6. Brakes...............................Set</div>
+        <div x-show="!stuff[6]"> <input x-model="stuff[6]" type="checkbox"> 7. Avionics Master......................Off</div>
+        <div x-show="!stuff[7]"> <input x-model="stuff[7]" type="checkbox"> 8. Circuit Breakers......................In</div>
+        <div x-show="!stuff[8]"> <input x-model="stuff[8]" type="checkbox"> 9. Fuel Selector....................On Both</div>
+        <div x-show="!stuff[9]"> <input x-model="stuff[9]" type="checkbox"> 10. Beacon Light.........................On</div>
+</h1>
 
-<div x-data="{stuff: [false, false, false]}">
-    <div x-show="!stuff[0]">
-        <input x-model="stuff[0]" type="checkbox">Stuff 1
-    </div>
+<h1 class="px-10 py-5"> ENGINE START
+    <div x-data="{stuff: [false, false, false, false, false, false, false, false, false]}">
+        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. Mixture.................................Rich</div>
+        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Carburetor Heat..................Cold</div>
+        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Prime..............2-6 strokes if cold</div>
+        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Master..............................On</div>
+        <div x-show="!stuff[4]"> <input x-model="stuff[4]" type="checkbox"> 5. Throttle.................Open 1/4 Inch</div>
+        <div x-show="!stuff[5]"> <input x-model="stuff[5]" type="checkbox"> 6. Propeller Area....................Clear</div>
+        <div x-show="!stuff[6]"> <input x-model="stuff[6]" type="checkbox"> 7. Ignition...........................To Start</div>
+        <div x-show="!stuff[7]"> <input x-model="stuff[7]" type="checkbox"> 8. Engine RPM........................800</div>
+        <div x-show="!stuff[8]"> <input x-model="stuff[8]" type="checkbox"> 9. Oil Pressure..................In Green</div>
+</h1>
 
-    <div x-show="!stuff[1]">
-        <input x-model="stuff[1]" type="checkbox">Stuff 2
-    </div>
+<h1 class="px-10 py-5"> BEFORE TAXI
+    <div x-data="{stuff: [false, false, false, false, false, false, false]}">
+        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 1. Flaps......................................Up</div>
+        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 2. Avionics Master.....................On</div>
+        <div x-show="!stuff[5]"> <input x-model="stuff[5]" type="checkbox"> 3. NAV lights...(Sunset-Sunrise)ON</div>
+        <div x-show="!stuff[6]"> <input x-model="stuff[6]" type="checkbox"> 4. Transponder...............Select ALT for taxiing</div>
+        <div x-show="!stuff[7]"> <input x-model="stuff[7]" type="checkbox"> 5. ATIS..................Listen and Copy</div>
+        <div x-show="!stuff[8]"> <input x-model="stuff[8]" type="checkbox"> 6. Brakes............Release and Test</div>
+        <div x-show="!stuff[9]"> <input x-model="stuff[9]" type="checkbox"> 7. Communication....GRD or CTAF</div>
+</h1>
 
-    <div x-show="!stuff[2]">
-        <input x-model="stuff[2]" type="checkbox">Stuff 3
-    </div>
-</div>
+<h1 class="px-10 py-5"> BEFORE TAKEOFF (RUNUP)
+    <div x-data="{stuff: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]}">
+        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 1. Brakes...................................Set</div>
+        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 2. Flight Instruments..................Set</div>
+        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 3. Engine Instruments...... In Green</div>
+        <div x-show="!stuff[4]"> <input x-model="stuff[4]" type="checkbox"> 4. Avionics....Set properly for Flight</div>
+        <div x-show="!stuff[5]"> <input x-model="stuff[5]" type="checkbox"> 5. Mixture............Rich below 3000’</div>
+        <div x-show="!stuff[6]"> <input x-model="stuff[6]" type="checkbox"> 6. Throttle......................1700 RPM</div>
+        <div x-show="!stuff[7]"> <input x-model="stuff[7]" type="checkbox"> 7. Magnetos..........Check Lt and Rt</div>
+        <div x-show="!stuff[8]"> <input x-model="stuff[8]" type="checkbox"> 8. Carburetor Heat.............On, check operation, then Off</div>
+        <div x-show="!stuff[9]"> <input x-model="stuff[9]" type="checkbox"> 9. Engine Instruments..........In Green</div>
+        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 10. Ammeter...........................Check</div>
+        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 11. Suction Gage..............Green Arc</div>
+        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 12. Throttle...............800 - 1000 RPM</div>
+        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 13. Throttle friction lock...........Adjust</div>
+        <div x-show="!stuff[4]"> <input x-model="stuff[4]" type="checkbox"> 14. Flight Controls......Free & Correct</div>
+        <div x-show="!stuff[5]"> <input x-model="stuff[5]" type="checkbox"> 15. Doors & Windows.............Secure</div>
+        <div x-show="!stuff[6]"> <input x-model="stuff[6]" type="checkbox"> 16. Transponder........Proper Code and select ALT</div>
+        <div x-show="!stuff[7]"> <input x-model="stuff[7]" type="checkbox"> 17. Lights..................Strobes ON, Landing Light As Req., NAV....Sunset to Sunrise</div>
+        <div x-show="!stuff[8]"> <input x-model="stuff[8]" type="checkbox"> 18. Pitot Heat.................As Required</div>
+        <div x-show="!stuff[9]"> <input x-model="stuff[9]" type="checkbox"> 19. Brakes.............................Release</div>
+</h1>
 
+<h1 class="px-10 py-5"> AT TAKEOFF
+    <div x-data="{stuff: [false, false, false, false, false]}">
+        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. Wing Flaps..................0° Normal - 10° Soft field</div>
+        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Throttle................Set Full Power</div>
+        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Mixture RICH, lean above 3000’</div>
+        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Airspeed........Rotate at 55 Knots</div>
+        <div x-show="!stuff[4]"> <input x-model="stuff[4]" type="checkbox"> 5. Climb Speed.........Vy 73 Knots - Vx 59 Knots</div>
+ 
+</h1>
 
+<h1 class="px-10 py-5"> CLIMB
+    <div x-data="{stuff: [false, false, false, false, false]}">
+        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. Throttle......................Full Power</div>
+        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Mixture...Rich, Lean above 3000</div>
+        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Trim.......................Set for Climb</div>
+        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Airspeed..................Vx 59 Knots - Vy 73 Knots</div>
+        <div x-show="!stuff[4]"> <input x-model="stuff[4]" type="checkbox"> 5. Cruise Climb.................80 Knots</div>
+</h1>
 
+<h1 class="px-10 py-5"> CRUISE
+    <div x-data="{stuff: [false, false, false, false]}">
+        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. Throttle...........2200 – 2450 RPM</div>
+        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Trim.......................................Set</div>
+        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Mixture...........Lean above 3000’</div>
+        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Landing Light.........................Off</div>
+</h1>
+
+<h1 class="px-10 py-5"> DESCENT
+    <div x-data="{stuff: [false, false, false, false, false, false, false, false]}">
+        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. ATIS.................Listen and Copy</div>
+        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Altimeter...............................Set</div>
+        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Throttle...............Set as required</div>
+        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Carburetor Heat........As required</div>
+        <div x-show="!stuff[4]"> <input x-model="stuff[4]" type="checkbox"> 5. Trim.........................As Required</div>
+        <div x-show="!stuff[5]"> <input x-model="stuff[5]" type="checkbox"> 6. Mixture............Rich as Required</div>
+        <div x-show="!stuff[6]"> <input x-model="stuff[6]" type="checkbox"> 7. Fuel Selector...............On Both</div>
+        <div x-show="!stuff[7]"> <input x-model="stuff[7]" type="checkbox"> 8. Avionics................................Set</div>
+</h1>
+
+<h1 class="px-10 py-5"> BEFORE LANDING
+    <div x-data="{stuff: [false, false, false, false, false]}">
+        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. Seats, seat belts............Secure</div>
+        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Fuel Selector......................Both</div>
+        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Mixture................................Rich</div>
+        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Carburetor Heat..............On as Required</div>
+        <div x-show="!stuff[4]"> <input x-model="stuff[4]" type="checkbox"> 5. Landing Light............As Required</div>
+</h1>
+
+<h1 class="px-10 py-5"> GO AROUND
+    <div x-data="{stuff: [false, false, false, false, false]}">
+        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. Throttle..............FULL POWER</div>
+        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Carburetor heat.................OFF</div>
+        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Flaps.............IMMEDIATELY 20°</div>
+        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Climb speed................55 Knots</div>
+        <div x-show="!stuff[4]"> <input x-model="stuff[4]" type="checkbox"> 5. Flaps up once obstacles CLEAR</div>
+</h1>
+
+<h1 class="px-10 py-5"> LANDING
+    <div x-data="{stuff: [false, false, false, false, false]}">
+        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. Flaps 10°.........Below 110 Knots</div>
+        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Flaps Full...........Below 85 Knots</div>
+        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Normal App.............65 Knots</div>
+        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Touchdown.....On mainwheels first, lower nose gently</div>
+        <div x-show="!stuff[4]"> <input x-model="stuff[4]" type="checkbox"> 5. Braking.........Minimum required</div>
+</h1>
+
+<h1 class="px-10 py-5"> AFTER LANDING
+    <div x-data="{stuff: [false, false, false, false]}">
+        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. Flaps......................................Up</div>
+        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Carburetor Heat.....................Off</div>
+        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Landing Light.........................Off</div>
+        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Strobe Lights.........................Off</div>
+</h1>
+
+<h1 class="px-10 py-5"> SHUTDOWN
+    <div x-data="{stuff: [false, false, false, false, false, false, false, false]}">
+        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. Avionics Master....................Off</div>
+        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Throttle...............800-1000 RPM</div>
+        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Mixture.....................Idle Cut-Off</div>
+        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Magnetos.......Off - Key on Dash</div>
+        <div x-show="!stuff[4]"> <input x-model="stuff[4]" type="checkbox"> 5. Master Switch.......................Off</div>
+        <div x-show="!stuff[5]"> <input x-model="stuff[5]" type="checkbox"> 6. Control Wheel Lock...........Install</div>
+        <div x-show="!stuff[6]"> <input x-model="stuff[6]" type="checkbox"> 7. Record Hobbs, Tach on invoice</div>
+        <div x-show="!stuff[7]"> <input x-model="stuff[7]" type="checkbox"> 8. Tie Downs.........................Install</div>
+</h1>
 
 </html>
