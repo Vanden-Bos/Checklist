@@ -4,18 +4,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.1/alpine.js" defer> </script>
 
 <h1 class="px-10 py-5"> BEFORE ENGINE START
-    <div x-data="{stuff: [false, false, false, false, false, false, false, false, false, false], help: false}">
-        <div x-show="!stuff[0]" x-on:click="help=true"> <input x-model="stuff[0]" type="checkbox"> 1. Preflight.......................Complete</div>
-        <div x-show="!stuff[1]" x-on:click="help=true"> <input x-model="stuff[1]" type="checkbox"> 2. Fuel Drain Tool.....................Stow</div>
-        <div x-show="!stuff[2]" x-on:click="help=true"> <input x-model="stuff[2]" type="checkbox"> 3. Passenger briefing..............Complete</div>
-        <div x-show="!stuff[3]" x-on:click="help=true"> <input x-model="stuff[3]" type="checkbox"> 4. Seats....................Adjust and Lock</div>
-        <div x-show="!stuff[4]" x-on:click="help=true"> <input x-model="stuff[4]" type="checkbox"> 5. Seat Belt & Harness...................On</div>
-        <div x-show="!stuff[5]" x-on:click="help=true"> <input x-model="stuff[5]" type="checkbox"> 6. Brakes...............................Set</div>
-        <div x-show="!stuff[6]" x-on:click="help=true"> <input x-model="stuff[6]" type="checkbox"> 7. Avionics Master......................Off</div>
-        <div x-show="!stuff[7]" x-on:click="help=true"> <input x-model="stuff[7]" type="checkbox"> 8. Circuit Breakers......................In</div>
-        <div x-show="!stuff[8]" x-on:click="help=true"> <input x-model="stuff[8]" type="checkbox"> 9. Fuel Selector....................On Both</div>
-        <div x-show="!stuff[9]" x-on:click="help=true"> <input x-model="stuff[9]" type="checkbox"> 10. Beacon Light.........................On</div>
-        <button x-show="help" x-on:click="stuff = [false, false, false, false, false, false, false, false, false, false], help = false" type="button"
+    <div x-data="{stuff: [false, false, false, false, false, false, false, false, false, false], needReset: false}">
+        <div x-show="!stuff[0]" x-on:change="needReset=true"> <input x-model="stuff[0]" type="checkbox"> 1. Preflight.......................Complete</div>
+        <div x-show="!stuff[1]" x-on:change="needReset=true"> <input x-model="stuff[1]" type="checkbox"> 2. Fuel Drain Tool.....................Stow</div>
+        <div x-show="!stuff[2]" x-on:change="needReset=true"> <input x-model="stuff[2]" type="checkbox"> 3. Passenger briefing..............Complete</div>
+        <div x-show="!stuff[3]" x-on:change="needReset=true"> <input x-model="stuff[3]" type="checkbox"> 4. Seats....................Adjust and Lock</div>
+        <div x-show="!stuff[4]" x-on:change="needReset=true"> <input x-model="stuff[4]" type="checkbox"> 5. Seat Belt & Harness...................On</div>
+        <div x-show="!stuff[5]" x-on:change="needReset=true"> <input x-model="stuff[5]" type="checkbox"> 6. Brakes...............................Set</div>
+        <div x-show="!stuff[6]" x-on:change="needReset=true"> <input x-model="stuff[6]" type="checkbox"> 7. Avionics Master......................Off</div>
+        <div x-show="!stuff[7]" x-on:change="needReset=true"> <input x-model="stuff[7]" type="checkbox"> 8. Circuit Breakers......................In</div>
+        <div x-show="!stuff[8]" x-on:change="needReset=true"> <input x-model="stuff[8]" type="checkbox"> 9. Fuel Selector....................On Both</div>
+        <div x-show="!stuff[9]" x-on:change="needReset=true"> <input x-model="stuff[9]" type="checkbox"> 10. Beacon Light.........................On</div>
+        <button x-show="needReset" x-on:click="stuff = [false, false, false, false, false, false, false, false, false, false], needReset = false" type="button"
             class="w-full sm:w-auto flex-none bg-green-900 hover:bg-green-700 text-white text-lg leading-6 font-semibold py-3 px-6 border 
             border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none 
             transition-colors duration-200"> Reset
@@ -23,17 +23,17 @@
 </h1>
 
 <h1 class="px-10 py-5"> ENGINE START
-    <div x-data="{stuff: [false, false, false, false, false, false, false, false, false], help: false}">
-        <div x-show="!stuff[0]" x-on:click="help=true"> <input x-model="stuff[0]" type="checkbox"> 1. Mixture.................................Rich</div>
-        <div x-show="!stuff[1]" x-on:click="help=true"> <input x-model="stuff[1]" type="checkbox"> 2. Carburetor Heat..................Cold</div>
-        <div x-show="!stuff[2]" x-on:click="help=true"> <input x-model="stuff[2]" type="checkbox"> 3. Prime..............2-6 strokes if cold</div>
-        <div x-show="!stuff[3]" x-on:click="help=true"> <input x-model="stuff[3]" type="checkbox"> 4. Master..............................On</div>
-        <div x-show="!stuff[4]" x-on:click="help=true"> <input x-model="stuff[4]" type="checkbox"> 5. Throttle.................Open 1/4 Inch</div>
-        <div x-show="!stuff[5]" x-on:click="help=true"> <input x-model="stuff[5]" type="checkbox"> 6. Propeller Area....................Clear</div>
-        <div x-show="!stuff[6]" x-on:click="help=true"> <input x-model="stuff[6]" type="checkbox"> 7. Ignition...........................To Start</div>
-        <div x-show="!stuff[7]" x-on:click="help=true"> <input x-model="stuff[7]" type="checkbox"> 8. Engine RPM........................800</div>
-        <div x-show="!stuff[8]" x-on:click="help=true"> <input x-model="stuff[8]" type="checkbox"> 9. Oil Pressure..................In Green</div>
-        <button x-show="help" x-on:click="stuff = [false, false, false, false, false, false, false, false, false, false], help = false" type="button"
+    <div x-data="{stuff: [false, false, false, false, false, false, false, false, false], needReset: false}">
+        <div x-show="!stuff[0]" x-on:change="needReset=true"> <input x-model="stuff[0]" type="checkbox"> 1. Mixture.................................Rich</div>
+        <div x-show="!stuff[1]" x-on:change="needReset=true"> <input x-model="stuff[1]" type="checkbox"> 2. Carburetor Heat..................Cold</div>
+        <div x-show="!stuff[2]" x-on:change="needReset=true"> <input x-model="stuff[2]" type="checkbox"> 3. Prime..............2-6 strokes if cold</div>
+        <div x-show="!stuff[3]" x-on:change="needReset=true"> <input x-model="stuff[3]" type="checkbox"> 4. Master..............................On</div>
+        <div x-show="!stuff[4]" x-on:change="needReset=true"> <input x-model="stuff[4]" type="checkbox"> 5. Throttle.................Open 1/4 Inch</div>
+        <div x-show="!stuff[5]" x-on:change="needReset=true"> <input x-model="stuff[5]" type="checkbox"> 6. Propeller Area....................Clear</div>
+        <div x-show="!stuff[6]" x-on:change="needReset=true"> <input x-model="stuff[6]" type="checkbox"> 7. Ignition...........................To Start</div>
+        <div x-show="!stuff[7]" x-on:change="needReset=true"> <input x-model="stuff[7]" type="checkbox"> 8. Engine RPM........................800</div>
+        <div x-show="!stuff[8]" x-on:change="needReset=true"> <input x-model="stuff[8]" type="checkbox"> 9. Oil Pressure..................In Green</div>
+        <button x-show="needReset" x-on:click="stuff = [false, false, false, false, false, false, false, false, false], needReset = false" type="button"
             class="w-full sm:w-auto flex-none bg-green-900 hover:bg-green-700 text-white text-lg leading-6 font-semibold py-3 px-6 border 
             border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none 
             transition-colors duration-200"> Reset
@@ -41,15 +41,15 @@
 </h1>
 
 <h1 class="px-10 py-5"> BEFORE TAXI
-    <div x-data="{stuff: [false, false, false, false, false, false, false], help: false}">
-        <div x-show="!stuff[2]" x-on:click="help=true"> <input x-model="stuff[2]" type="checkbox"> 1. Flaps......................................Up</div>
-        <div x-show="!stuff[3]" x-on:click="help=true"> <input x-model="stuff[3]" type="checkbox"> 2. Avionics Master.....................On</div>
-        <div x-show="!stuff[5]" x-on:click="help=true"> <input x-model="stuff[5]" type="checkbox"> 3. NAV lights...(Sunset-Sunrise)ON</div>
-        <div x-show="!stuff[6]" x-on:click="help=true"> <input x-model="stuff[6]" type="checkbox"> 4. Transponder...............Select ALT for taxiing</div>
-        <div x-show="!stuff[7]" x-on:click="help=true"> <input x-model="stuff[7]" type="checkbox"> 5. ATIS..................Listen and Copy</div>
-        <div x-show="!stuff[8]" x-on:click="help=true"> <input x-model="stuff[8]" type="checkbox"> 6. Brakes............Release and Test</div>
-        <div x-show="!stuff[9]" x-on:click="help=true"> <input x-model="stuff[9]" type="checkbox"> 7. Communication....GRD or CTAF</div>
-        <button x-show="help" x-on:click="stuff = [false, false, false, false, false, false, false, false, false, false], help = false" type="button"
+    <div x-data="{stuff: [false, false, false, false, false, false, false], needReset: false}">
+        <div x-show="!stuff[0]" x-on:change="needReset=true"> <input x-model="stuff[0]" type="checkbox"> 1. Flaps......................................Up</div>
+        <div x-show="!stuff[1]" x-on:change="needReset=true"> <input x-model="stuff[1]" type="checkbox"> 2. Avionics Master.....................On</div>
+        <div x-show="!stuff[2]" x-on:change="needReset=true"> <input x-model="stuff[2]" type="checkbox"> 3. NAV lights...(Sunset-Sunrise)ON</div>
+        <div x-show="!stuff[3]" x-on:change="needReset=true"> <input x-model="stuff[3]" type="checkbox"> 4. Transponder...............Select ALT for taxiing</div>
+        <div x-show="!stuff[4]" x-on:change="needReset=true"> <input x-model="stuff[4]" type="checkbox"> 5. ATIS..................Listen and Copy</div>
+        <div x-show="!stuff[5]" x-on:change="needReset=true"> <input x-model="stuff[5]" type="checkbox"> 6. Brakes............Release and Test</div>
+        <div x-show="!stuff[6]" x-on:change="needReset=true"> <input x-model="stuff[6]" type="checkbox"> 7. Communication....GRD or CTAF</div>
+        <button x-show="needReset" x-on:click="stuff = [false, false, false, false, false, false, false], needReset = false" type="button"
             class="w-full sm:w-auto flex-none bg-green-900 hover:bg-green-700 text-white text-lg leading-6 font-semibold py-3 px-6 border 
             border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none 
             transition-colors duration-200"> Reset
@@ -57,27 +57,27 @@
 </h1>
 
 <h1 class="px-10 py-5"> BEFORE TAKEOFF (RUNUP)
-    <div x-data="{stuff: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false], help: false}">
-        <div x-show="!stuff[1]">  <input x-model="stuff[1]"  type="checkbox"> 1. Brakes...................................Set</div>
-        <div x-show="!stuff[2]">  <input x-model="stuff[2]"  type="checkbox"> 2. Flight Instruments..................Set</div>
-        <div x-show="!stuff[3]">  <input x-model="stuff[3]"  type="checkbox"> 3. Engine Instruments...... In Green</div>
-        <div x-show="!stuff[4]">  <input x-model="stuff[4]"  type="checkbox"> 4. Avionics....Set properly for Flight</div>
-        <div x-show="!stuff[5]">  <input x-model="stuff[5]"  type="checkbox"> 5. Mixture............Rich below 3000’</div>
-        <div x-show="!stuff[6]">  <input x-model="stuff[6]"  type="checkbox"> 6. Throttle......................1700 RPM</div>
-        <div x-show="!stuff[7]">  <input x-model="stuff[7]"  type="checkbox"> 7. Magnetos..........Check Lt and Rt</div>
-        <div x-show="!stuff[8]">  <input x-model="stuff[8]"  type="checkbox"> 8. Carburetor Heat.............On, check operation, then Off</div>
-        <div x-show="!stuff[9]">  <input x-model="stuff[9]"  type="checkbox"> 9. Engine Instruments..........In Green</div>
-        <div x-show="!stuff[10]"> <input x-model="stuff[10]" type="checkbox"> 10. Ammeter...........................Check</div>
-        <div x-show="!stuff[11]"> <input x-model="stuff[11]" type="checkbox"> 11. Suction Gage..............Green Arc</div>
-        <div x-show="!stuff[12]"> <input x-model="stuff[12]" type="checkbox"> 12. Throttle...............800 - 1000 RPM</div>
-        <div x-show="!stuff[13]"> <input x-model="stuff[13]" type="checkbox"> 13. Throttle friction lock...........Adjust</div>
-        <div x-show="!stuff[14]"> <input x-model="stuff[14]" type="checkbox"> 14. Flight Controls......Free & Correct</div>
-        <div x-show="!stuff[15]"> <input x-model="stuff[15]" type="checkbox"> 15. Doors & Windows.............Secure</div>
-        <div x-show="!stuff[16]"> <input x-model="stuff[16]" type="checkbox"> 16. Transponder........Proper Code and select ALT</div>
-        <div x-show="!stuff[17]"> <input x-model="stuff[17]" type="checkbox"> 17. Lights..................Strobes ON, Landing Light As Req., NAV....Sunset to Sunrise</div>
-        <div x-show="!stuff[18]"> <input x-model="stuff[18]" type="checkbox"> 18. Pitot Heat.................As Required</div>
-        <div x-show="!stuff[19]"> <input x-model="stuff[19]" type="checkbox"> 19. Brakes.............................Release</div>
-        <button x-show="help" x-on:click="stuff = [false, false, false, false, false, false, false, false, false, false], help = false" type="button"
+    <div x-data="{stuff: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false], needReset: false}">
+        <div x-show="!stuff[0]"  x-on:change="needReset=true"> <input x-model="stuff[0]"  type="checkbox"> 1. Brakes...................................Set</div>
+        <div x-show="!stuff[1]"  x-on:change="needReset=true"> <input x-model="stuff[1]"  type="checkbox"> 2. Flight Instruments..................Set</div>
+        <div x-show="!stuff[2]"  x-on:change="needReset=true"> <input x-model="stuff[2]"  type="checkbox"> 3. Engine Instruments...... In Green</div>
+        <div x-show="!stuff[3]"  x-on:change="needReset=true"> <input x-model="stuff[3]"  type="checkbox"> 4. Avionics....Set properly for Flight</div>
+        <div x-show="!stuff[4]"  x-on:change="needReset=true"> <input x-model="stuff[4]"  type="checkbox"> 5. Mixture............Rich below 3000’</div>
+        <div x-show="!stuff[5]"  x-on:change="needReset=true"> <input x-model="stuff[5]"  type="checkbox"> 6. Throttle......................1700 RPM</div>
+        <div x-show="!stuff[6]"  x-on:change="needReset=true"> <input x-model="stuff[6]"  type="checkbox"> 7. Magnetos..........Check Lt and Rt</div>
+        <div x-show="!stuff[7]"  x-on:change="needReset=true"> <input x-model="stuff[7]"  type="checkbox"> 8. Carburetor Heat.............On, check operation, then Off</div>
+        <div x-show="!stuff[8]"  x-on:change="needReset=true"> <input x-model="stuff[8]"  type="checkbox"> 9. Engine Instruments..........In Green</div>
+        <div x-show="!stuff[9]"  x-on:change="needReset=true"> <input x-model="stuff[9]"  type="checkbox"> 10. Ammeter...........................Check</div>
+        <div x-show="!stuff[10]" x-on:change="needReset=true"> <input x-model="stuff[10]" type="checkbox"> 11. Suction Gage..............Green Arc</div>
+        <div x-show="!stuff[11]" x-on:change="needReset=true"> <input x-model="stuff[11]" type="checkbox"> 12. Throttle...............800 - 1000 RPM</div>
+        <div x-show="!stuff[12]" x-on:change="needReset=true"> <input x-model="stuff[12]" type="checkbox"> 13. Throttle friction lock...........Adjust</div>
+        <div x-show="!stuff[13]" x-on:change="needReset=true"> <input x-model="stuff[13]" type="checkbox"> 14. Flight Controls......Free & Correct</div>
+        <div x-show="!stuff[14]" x-on:change="needReset=true"> <input x-model="stuff[14]" type="checkbox"> 15. Doors & Windows.............Secure</div>
+        <div x-show="!stuff[15]" x-on:change="needReset=true"> <input x-model="stuff[15]" type="checkbox"> 16. Transponder........Proper Code and select ALT</div>
+        <div x-show="!stuff[16]" x-on:change="needReset=true"> <input x-model="stuff[16]" type="checkbox"> 17. Lights..................Strobes ON, Landing Light As Req., NAV....Sunset to Sunrise</div>
+        <div x-show="!stuff[17]" x-on:change="needReset=true"> <input x-model="stuff[17]" type="checkbox"> 18. Pitot Heat.................As Required</div>
+        <div x-show="!stuff[18]" x-on:change="needReset=true"> <input x-model="stuff[18]" type="checkbox"> 19. Brakes.............................Release</div>
+        <button x-show="needReset" x-on:click="stuff = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false], needReset = false" type="button"
             class="w-full sm:w-auto flex-none bg-green-900 hover:bg-green-700 text-white text-lg leading-6 font-semibold py-3 px-6 border 
             border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none 
             transition-colors duration-200"> Reset
@@ -85,13 +85,13 @@
 </h1>
 
 <h1 class="px-10 py-5"> AT TAKEOFF
-    <div x-data="{stuff: [false, false, false, false, false], help: false}">
-        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. Wing Flaps..................0° Normal - 10° Soft field</div>
-        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Throttle................Set Full Power</div>
-        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Mixture RICH, lean above 3000’</div>
-        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Airspeed........Rotate at 55 Knots</div>
-        <div x-show="!stuff[4]"> <input x-model="stuff[4]" type="checkbox"> 5. Climb Speed.........Vy 73 Knots - Vx 59 Knots</div>
-        <button x-show="help" x-on:click="stuff = [false, false, false, false, false, false, false, false, false, false], help = false" type="button"
+    <div x-data="{stuff: [false, false, false, false, false], needReset: false}">
+        <div x-show="!stuff[0]" x-on:change="needReset=true"> <input x-model="stuff[0]" type="checkbox"> 1. Wing Flaps..................0° Normal - 10° Soft field</div>
+        <div x-show="!stuff[1]" x-on:change="needReset=true"> <input x-model="stuff[1]" type="checkbox"> 2. Throttle................Set Full Power</div>
+        <div x-show="!stuff[2]" x-on:change="needReset=true"> <input x-model="stuff[2]" type="checkbox"> 3. Mixture RICH, lean above 3000’</div>
+        <div x-show="!stuff[3]" x-on:change="needReset=true"> <input x-model="stuff[3]" type="checkbox"> 4. Airspeed........Rotate at 55 Knots</div>
+        <div x-show="!stuff[4]" x-on:change="needReset=true"> <input x-model="stuff[4]" type="checkbox"> 5. Climb Speed.........Vy 73 Knots - Vx 59 Knots</div>
+        <button x-show="needReset" x-on:click="stuff = [false, false, false, false, false], needReset = false" type="button"
             class="w-full sm:w-auto flex-none bg-green-900 hover:bg-green-700 text-white text-lg leading-6 font-semibold py-3 px-6 border 
             border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none 
             transition-colors duration-200"> Reset
@@ -100,13 +100,13 @@
 </h1>
 
 <h1 class="px-10 py-5"> CLIMB
-    <div x-data="{stuff: [false, false, false, false, false], help: false}">
-        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. Throttle......................Full Power</div>
-        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Mixture...Rich, Lean above 3000</div>
-        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Trim.......................Set for Climb</div>
-        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Airspeed..................Vx 59 Knots - Vy 73 Knots</div>
-        <div x-show="!stuff[4]"> <input x-model="stuff[4]" type="checkbox"> 5. Cruise Climb.................80 Knots</div>
-        <button x-show="help" x-on:click="stuff = [false, false, false, false, false, false, false, false, false, false], help = false" type="button"
+    <div x-data="{stuff: [false, false, false, false, false], needReset: false}">
+        <div x-show="!stuff[0]" x-on:change="needReset=true"> <input x-model="stuff[0]" type="checkbox"> 1. Throttle......................Full Power</div>
+        <div x-show="!stuff[1]" x-on:change="needReset=true"> <input x-model="stuff[1]" type="checkbox"> 2. Mixture...Rich, Lean above 3000</div>
+        <div x-show="!stuff[2]" x-on:change="needReset=true"> <input x-model="stuff[2]" type="checkbox"> 3. Trim.......................Set for Climb</div>
+        <div x-show="!stuff[3]" x-on:change="needReset=true"> <input x-model="stuff[3]" type="checkbox"> 4. Airspeed..................Vx 59 Knots - Vy 73 Knots</div>
+        <div x-show="!stuff[4]" x-on:change="needReset=true"> <input x-model="stuff[4]" type="checkbox"> 5. Cruise Climb.................80 Knots</div>
+        <button x-show="needReset" x-on:click="stuff = [false, false, false, false, false, false, false, false, false, false], needReset = false" type="button"
             class="w-full sm:w-auto flex-none bg-green-900 hover:bg-green-700 text-white text-lg leading-6 font-semibold py-3 px-6 border 
             border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none 
             transition-colors duration-200"> Reset
@@ -114,12 +114,12 @@
 </h1>
 
 <h1 class="px-10 py-5"> CRUISE
-    <div x-data="{stuff: [false, false, false, false], help: false}">
-        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. Throttle...........2200 – 2450 RPM</div>
-        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Trim.......................................Set</div>
-        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Mixture...........Lean above 3000’</div>
-        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Landing Light.........................Off</div>
-        <button x-show="help" x-on:click="stuff = [false, false, false, false, false, false, false, false, false, false], help = false" type="button"
+    <div x-data="{stuff: [false, false, false, false, false], needReset: false}">
+        <div x-show="!stuff[0]" x-on:change="needReset=true"> <input x-model="stuff[0]" type="checkbox"> 1. Throttle...........2200 – 2450 RPM</div>
+        <div x-show="!stuff[1]" x-on:change="needReset=true"> <input x-model="stuff[1]" type="checkbox"> 2. Trim.......................................Set</div>
+        <div x-show="!stuff[2]" x-on:change="needReset=true"> <input x-model="stuff[2]" type="checkbox"> 3. Mixture...........Lean above 3000’</div>
+        <div x-show="!stuff[3]" x-on:change="needReset=true"> <input x-model="stuff[3]" type="checkbox"> 4. Landing Light.........................Off</div>
+        <button x-show="needReset" x-on:click="stuff = [false, false, false, false, false, false, false, false, false, false], needReset = false" type="button"
             class="w-full sm:w-auto flex-none bg-green-900 hover:bg-green-700 text-white text-lg leading-6 font-semibold py-3 px-6 border 
             border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none 
             transition-colors duration-200"> Reset
@@ -127,16 +127,16 @@
 </h1>
 
 <h1 class="px-10 py-5"> DESCENT
-    <div x-data="{stuff: [false, false, false, false, false, false, false, false], help: false}">
-        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. ATIS.................Listen and Copy</div>
-        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Altimeter...............................Set</div>
-        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Throttle...............Set as required</div>
-        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Carburetor Heat........As required</div>
-        <div x-show="!stuff[4]"> <input x-model="stuff[4]" type="checkbox"> 5. Trim.........................As Required</div>
-        <div x-show="!stuff[5]"> <input x-model="stuff[5]" type="checkbox"> 6. Mixture............Rich as Required</div>
-        <div x-show="!stuff[6]"> <input x-model="stuff[6]" type="checkbox"> 7. Fuel Selector...............On Both</div>
-        <div x-show="!stuff[7]"> <input x-model="stuff[7]" type="checkbox"> 8. Avionics................................Set</div>
-        <button x-show="help" x-on:click="stuff = [false, false, false, false, false, false, false, false, false, false], help = false" type="button"
+    <div x-data="{stuff: [false, false, false, false, false, false, false, false], needReset: false}">
+        <div x-show="!stuff[0]" x-on:change="needReset=true"> <input x-model="stuff[0]" type="checkbox"> 1. ATIS.................Listen and Copy</div>
+        <div x-show="!stuff[1]" x-on:change="needReset=true"> <input x-model="stuff[1]" type="checkbox"> 2. Altimeter...............................Set</div>
+        <div x-show="!stuff[2]" x-on:change="needReset=true"> <input x-model="stuff[2]" type="checkbox"> 3. Throttle...............Set as required</div>
+        <div x-show="!stuff[3]" x-on:change="needReset=true"> <input x-model="stuff[3]" type="checkbox"> 4. Carburetor Heat........As required</div>
+        <div x-show="!stuff[4]" x-on:change="needReset=true"> <input x-model="stuff[4]" type="checkbox"> 5. Trim.........................As Required</div>
+        <div x-show="!stuff[5]" x-on:change="needReset=true"> <input x-model="stuff[5]" type="checkbox"> 6. Mixture............Rich as Required</div>
+        <div x-show="!stuff[6]" x-on:change="needReset=true"> <input x-model="stuff[6]" type="checkbox"> 7. Fuel Selector...............On Both</div>
+        <div x-show="!stuff[7]" x-on:change="needReset=true"> <input x-model="stuff[7]" type="checkbox"> 8. Avionics................................Set</div>
+        <button x-show="needReset" x-on:click="stuff = [false, false, false, false, false, false, false, false], needReset = false" type="button"
             class="w-full sm:w-auto flex-none bg-green-900 hover:bg-green-700 text-white text-lg leading-6 font-semibold py-3 px-6 border 
             border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none 
             transition-colors duration-200"> Reset
@@ -144,13 +144,13 @@
 </h1>
 
 <h1 class="px-10 py-5"> BEFORE LANDING
-    <div x-data="{stuff: [false, false, false, false, false], help: false}">
-        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. Seats, seat belts............Secure</div>
-        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Fuel Selector......................Both</div>
-        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Mixture................................Rich</div>
-        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Carburetor Heat..............On as Required</div>
-        <div x-show="!stuff[4]"> <input x-model="stuff[4]" type="checkbox"> 5. Landing Light............As Required</div>
-        <button x-show="help" x-on:click="stuff = [false, false, false, false, false, false, false, false, false, false], help = false" type="button"
+    <div x-data="{stuff: [false, false, false, false, false], needReset: false}">
+        <div x-show="!stuff[0]" x-on:change="needReset=true"> <input x-model="stuff[0]" type="checkbox"> 1. Seats, seat belts............Secure</div>
+        <div x-show="!stuff[1]" x-on:change="needReset=true"> <input x-model="stuff[1]" type="checkbox"> 2. Fuel Selector......................Both</div>
+        <div x-show="!stuff[2]" x-on:change="needReset=true"> <input x-model="stuff[2]" type="checkbox"> 3. Mixture................................Rich</div>
+        <div x-show="!stuff[3]" x-on:change="needReset=true"> <input x-model="stuff[3]" type="checkbox"> 4. Carburetor Heat..............On as Required</div>
+        <div x-show="!stuff[4]" x-on:change="needReset=true"> <input x-model="stuff[4]" type="checkbox"> 5. Landing Light............As Required</div>
+        <button x-show="needReset" x-on:click="stuff = [false, false, false, false, false], needReset = false" type="button"
             class="w-full sm:w-auto flex-none bg-green-900 hover:bg-green-700 text-white text-lg leading-6 font-semibold py-3 px-6 border 
             border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none 
             transition-colors duration-200"> Reset
@@ -158,13 +158,13 @@
 </h1>
 
 <h1 class="px-10 py-5"> GO AROUND
-    <div x-data="{stuff: [false, false, false, false, false], help: false}">
-        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. Throttle..............FULL POWER</div>
-        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Carburetor heat.................OFF</div>
-        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Flaps.............IMMEDIATELY 20°</div>
-        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Climb speed................55 Knots</div>
-        <div x-show="!stuff[4]"> <input x-model="stuff[4]" type="checkbox"> 5. Flaps up once obstacles CLEAR</div>
-        <button x-show="help" x-on:click="stuff = [false, false, false, false, false, false, false, false, false, false], help = false" type="button"
+    <div x-data="{stuff: [false, false, false, false, false], needReset: false}">
+        <div x-show="!stuff[0]" x-on:change="needReset=true"> <input x-model="stuff[0]" type="checkbox"> 1. Throttle..............FULL POWER</div>
+        <div x-show="!stuff[1]" x-on:change="needReset=true"> <input x-model="stuff[1]" type="checkbox"> 2. Carburetor heat.................OFF</div>
+        <div x-show="!stuff[2]" x-on:change="needReset=true"> <input x-model="stuff[2]" type="checkbox"> 3. Flaps.............IMMEDIATELY 20°</div>
+        <div x-show="!stuff[3]" x-on:change="needReset=true"> <input x-model="stuff[3]" type="checkbox"> 4. Climb speed................55 Knots</div>
+        <div x-show="!stuff[4]" x-on:change="needReset=true"> <input x-model="stuff[4]" type="checkbox"> 5. Flaps up once obstacles CLEAR</div>
+        <button x-show="needReset" x-on:click="stuff = [false, false, false, false, false], needReset = false" type="button"
             class="w-full sm:w-auto flex-none bg-green-900 hover:bg-green-700 text-white text-lg leading-6 font-semibold py-3 px-6 border 
             border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none 
             transition-colors duration-200"> Reset
@@ -172,13 +172,13 @@
 </h1>
 
 <h1 class="px-10 py-5"> LANDING
-    <div x-data="{stuff: [false, false, false, false, false], help: false}">
-        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. Flaps 10°.........Below 110 Knots</div>
-        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Flaps Full...........Below 85 Knots</div>
-        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Normal App.............65 Knots</div>
-        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Touchdown.....On mainwheels first, lower nose gently</div>
-        <div x-show="!stuff[4]"> <input x-model="stuff[4]" type="checkbox"> 5. Braking.........Minimum required</div>
-        <button x-show="help" x-on:click="stuff = [false, false, false, false, false, false, false, false, false, false], help = false" type="button"
+    <div x-data="{stuff: [false, false, false, false, false], needReset: false}">
+        <div x-show="!stuff[0]" x-on:change="needReset=true"> <input x-model="stuff[0]" type="checkbox"> 1. Flaps 10°.........Below 110 Knots</div>
+        <div x-show="!stuff[1]" x-on:change="needReset=true"> <input x-model="stuff[1]" type="checkbox"> 2. Flaps Full...........Below 85 Knots</div>
+        <div x-show="!stuff[2]" x-on:change="needReset=true"> <input x-model="stuff[2]" type="checkbox"> 3. Normal App.............65 Knots</div>
+        <div x-show="!stuff[3]" x-on:change="needReset=true"> <input x-model="stuff[3]" type="checkbox"> 4. Touchdown.....On mainwheels first, lower nose gently</div>
+        <div x-show="!stuff[4]" x-on:change="needReset=true"> <input x-model="stuff[4]" type="checkbox"> 5. Braking.........Minimum required</div>
+        <button x-show="needReset" x-on:click="stuff = [false, false, false, false, false], needReset = false" type="button"
             class="w-full sm:w-auto flex-none bg-green-900 hover:bg-green-700 text-white text-lg leading-6 font-semibold py-3 px-6 border 
             border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none 
             transition-colors duration-200"> Reset
@@ -186,12 +186,12 @@
 </h1>
 
 <h1 class="px-10 py-5"> AFTER LANDING
-    <div x-data="{stuff: [false, false, false, false], help: false}">
-        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. Flaps......................................Up</div>
-        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Carburetor Heat.....................Off</div>
-        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Landing Light.........................Off</div>
-        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Strobe Lights.........................Off</div>
-        <button x-show="help" x-on:click="stuff = [false, false, false, false, false, false, false, false, false, false], help = false" type="button"
+    <div x-data="{stuff: [false, false, false, false], needReset: false}">
+        <div x-show="!stuff[0]" x-on:change="needReset=true"> <input x-model="stuff[0]" type="checkbox"> 1. Flaps......................................Up</div>
+        <div x-show="!stuff[1]" x-on:change="needReset=true"> <input x-model="stuff[1]" type="checkbox"> 2. Carburetor Heat.....................Off</div>
+        <div x-show="!stuff[2]" x-on:change="needReset=true"> <input x-model="stuff[2]" type="checkbox"> 3. Landing Light.........................Off</div>
+        <div x-show="!stuff[3]" x-on:change="needReset=true"> <input x-model="stuff[3]" type="checkbox"> 4. Strobe Lights.........................Off</div>
+        <button x-show="needReset" x-on:click="stuff = [false, false, false, false], needReset = false" type="button"
             class="w-full sm:w-auto flex-none bg-green-900 hover:bg-green-700 text-white text-lg leading-6 font-semibold py-3 px-6 border 
             border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none 
             transition-colors duration-200"> Reset
@@ -199,16 +199,16 @@
 </h1>
 
 <h1 class="px-10 py-5"> SHUTDOWN
-    <div x-data="{stuff: [false, false, false, false, false, false, false, false], help: false}">
-        <div x-show="!stuff[0]"> <input x-model="stuff[0]" type="checkbox"> 1. Avionics Master....................Off</div>
-        <div x-show="!stuff[1]"> <input x-model="stuff[1]" type="checkbox"> 2. Throttle...............800-1000 RPM</div>
-        <div x-show="!stuff[2]"> <input x-model="stuff[2]" type="checkbox"> 3. Mixture.....................Idle Cut-Off</div>
-        <div x-show="!stuff[3]"> <input x-model="stuff[3]" type="checkbox"> 4. Magnetos.......Off - Key on Dash</div>
-        <div x-show="!stuff[4]"> <input x-model="stuff[4]" type="checkbox"> 5. Master Switch.......................Off</div>
-        <div x-show="!stuff[5]"> <input x-model="stuff[5]" type="checkbox"> 6. Control Wheel Lock...........Install</div>
-        <div x-show="!stuff[6]"> <input x-model="stuff[6]" type="checkbox"> 7. Record Hobbs, Tach on invoice</div>
-        <div x-show="!stuff[7]"> <input x-model="stuff[7]" type="checkbox"> 8. Tie Downs.........................Install</div>
-        <button x-show="help" x-on:click="stuff = [false, false, false, false, false, false, false, false, false, false], help = false" type="button"
+    <div x-data="{stuff: [false, false, false, false, false, false, false, false], needReset: false}">
+        <div x-show="!stuff[0]" x-on:change="needReset=true"> <input x-model="stuff[0]" type="checkbox"> 1. Avionics Master....................Off</div>
+        <div x-show="!stuff[1]" x-on:change="needReset=true"> <input x-model="stuff[1]" type="checkbox"> 2. Throttle...............800-1000 RPM</div>
+        <div x-show="!stuff[2]" x-on:change="needReset=true"> <input x-model="stuff[2]" type="checkbox"> 3. Mixture.....................Idle Cut-Off</div>
+        <div x-show="!stuff[3]" x-on:change="needReset=true"> <input x-model="stuff[3]" type="checkbox"> 4. Magnetos.......Off - Key on Dash</div>
+        <div x-show="!stuff[4]" x-on:change="needReset=true"> <input x-model="stuff[4]" type="checkbox"> 5. Master Switch.......................Off</div>
+        <div x-show="!stuff[5]" x-on:change="needReset=true"> <input x-model="stuff[5]" type="checkbox"> 6. Control Wheel Lock...........Install</div>
+        <div x-show="!stuff[6]" x-on:change="needReset=true"> <input x-model="stuff[6]" type="checkbox"> 7. Record Hobbs, Tach on invoice</div>
+        <div x-show="!stuff[7]" x-on:change="needReset=true"> <input x-model="stuff[7]" type="checkbox"> 8. Tie Downs.........................Install</div>
+        <button x-show="needReset" x-on:click="stuff = [false, false, false, false, false, false, false, false], needReset = false" type="button"
             class="w-full sm:w-auto flex-none bg-green-900 hover:bg-green-700 text-white text-lg leading-6 font-semibold py-3 px-6 border 
             border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none 
             transition-colors duration-200"> Reset
